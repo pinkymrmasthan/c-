@@ -1,0 +1,105 @@
+coding
+
+      using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace WindowsFormsApplication4
+{
+    public partial class Form9 : Form
+    {
+        SqlConnection con = new SqlConnection();
+        SqlCommand com = new SqlCommand();
+        SqlDataReader red;
+        public Form9()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            com.CommandText = "insert into sam values('" + Convert.ToInt16(textBox1.Text) + "','" + textBox2.Text + " ', '" + textBox3.Text + "')";
+            com.ExecuteNonQuery();
+            //con.Close();
+            MessageBox.Show("Record Inserted");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            com.CommandText = "delete from sam where rno='" + comboBox1.SelectedItem + "'";
+            com.ExecuteNonQuery();
+            comboBox1.Items.Remove(comboBox1.SelectedItem);
+            textBox2.Clear();
+            textBox3.Clear();
+            MessageBox.Show("deleted");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            com.CommandText = "update sam set sname='" + textBox2.Text + "',dept='" + textBox3.Text + "' where rno='" + comboBox1.SelectedItem + "'";
+            com.ExecuteNonQuery();
+            MessageBox.Show("updated");
+        }
+
+        private void Form9_Load(object sender, EventArgs e)
+        {
+          
+            con.ConnectionString = @"data source =ADMIN-PC\sqlexpress;Initial catalog=master;Integrated security=true";
+            com.Connection = con;
+            con.Open();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox1.Visible = true;
+            comboBox1.Visible = false;
+            button1.Enabled = true;
+            button2.Enabled = false;
+            button3.Enabled = false;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            com.CommandText = "select * from sam where rno= '" + comboBox1.SelectedItem + "'";
+            red = com.ExecuteReader();
+            while (red.Read())
+            {
+
+                textBox2.Text = red.GetString(1);
+                textBox3.Text = red.GetString(2);
+            }
+            red.Close();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            button1.Enabled = false;
+            button2.Enabled = true;
+            button3.Enabled = true;
+            comboBox1.Visible = true;
+            textBox1.Visible = false;
+            com.CommandText = "select * from sam";
+            red = com.ExecuteReader();
+            while (red.Read())
+            {
+                comboBox1.Items.Add(red.GetValue(0));
+            }
+            red.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
