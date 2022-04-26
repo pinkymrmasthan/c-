@@ -1,0 +1,24 @@
+CODING :
+
+
+static void Main(string[] args)
+      {
+       Console.WriteLine("Enter a Alphabet");
+       
+       char ch = Convert.ToChar(Console.ReadLine());
+        if(char.IsUpper(ch))
+        {
+                         Console.writeLine("Upper case");
+        }
+        else if(char.IsLower(ch))
+        {
+               Console.writeLine("Lower case");
+        }
+        else
+        {
+            Console.writeLine("Other character");
+        }
+        Console.ReadLine();
+     }
+      
+        
