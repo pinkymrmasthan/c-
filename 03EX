@@ -1,0 +1,26 @@
+CODING :
+
+
+
+
+private void button1_click(object sender,eventArgs e)
+      {
+         string s;
+         string outputstring = string.Empty;
+         
+         s = textBox1.Text;
+         foreach (char c in s)
+         {
+           if(char.IsLOwer(c))
+         {
+           outputString+=char.ToUpper(c);
+           textBox2.Text= outputString;
+           }
+           else
+           {
+            outputString +=char.ToUpper(c);
+            textBox2.Text= outputString;
+            }
+        }
+     }
+     
