@@ -3,24 +3,34 @@ CODING :
 
 
 
-private void button1_click(object sender,eventArgs e)
-      {
-         string s;
-         string outputstring = string.Empty;
-         
-         s = textBox1.Text;
-         foreach (char c in s)
-         {
-           if(char.IsLOwer(c))
-         {
-           outputString+=char.ToUpper(c);
-           textBox2.Text= outputString;
-           }
-           else
-           {
-            outputString +=char.ToUpper(c);
-            textBox2.Text= outputString;
-            }
-        }
-     }
-     
+private void button1_Click(object sender, EventArgs e)
+{
+String s;
+string outputString = string.Empty;
+
+s = textBox1.Text;
+foreach (char c in s)
+{
+if (Char.IsLower(c))
+
+{
+outputString+=char.ToUpper(c);
+textBox2.Text = outputString;
+}
+
+else
+{
+outputString += char.ToLower(c);
+textBox2.Text = outputString;
+}
+
+}
+
+}
+
+private void button2_Click(object sender, EventArgs e)
+
+{
+textBox1.Clear();
+textBox2.Clear();
+}
