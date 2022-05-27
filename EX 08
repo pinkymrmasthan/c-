@@ -1,0 +1,29 @@
+private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.ShowDialog();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+
+                string fileName;
+                fileName = dlg.FileName;
+
+                textBox1.Text = fileName;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dlg = new
+FolderBrowserDialog(); dlg.ShowDialog();
+if (dlg.ShowDialog() == DialogResult.OK)
+{
+    string folderName;
+    folderName = dlg.SelectedPath;
+    textBox1.Text = folderName;
+}
+
+        }
+    }
+}
