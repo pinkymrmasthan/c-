@@ -1,0 +1,32 @@
+No coding 11th ex 
+
+Topic: 
+    Database application to display data using data grid
+
+Aim 
+
+   To display a c# .net application using data grid view to display records
+
+
+Procedure 
+        
+       * Open the c# .net window application project.
+       * open toolbox , click the datagrid view tool and place it on the form by dragging the mouse .
+       * Add a data source for the project and choose the database type a database 
+       * Select the data connections and database object as the table 
+       * Run The Application.
+
+No coding only use tool box steps 
+        
+
+   
+                        Thank you.
+
+
+
+
+
+
+
+
+
