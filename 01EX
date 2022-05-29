@@ -1,21 +1,22 @@
-static void Main(string[] args)
-      {
-       Console.WriteLine("Enter a Alphabet");
-       
-       char ch = Convert.ToChar(Console.ReadLine());
-        if(char.IsUpper(ch))
+class Program
+    {
+        static void Main(string[] args)
         {
-                         Console.writeLine("Upper case");
+            Console.WriteLine("Enter a Alphabet");
+            char ch = Convert.ToChar(Console.ReadLine());
+            if (char.IsUpper(ch))
+            {
+                Console.WriteLine("Upper case");
+            }
+            else if (char.IsLower(ch))
+            {
+                Console.WriteLine("Lower case");
+            }
+            else
+            {
+                Console.WriteLine("Other character");
+            }
+            Console.ReadLine();
         }
-        else if(char.IsLower(ch))
-        {
-               Console.writeLine("Lower case");
-        }
-        else
-        {
-            Console.writeLine("Other character");
-        }
-        Console.ReadLine();
-     }
-      
-        
+    }
+}
