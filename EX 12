@@ -1,0 +1,57 @@
+
+AIM: To create an application for accessing the details from XML document containing subject, mark scored and year of passing into a DataSet.
+
+Procedure:
+Create a windows application in C#.Net.
+
+Drag the Datagrid view control and a button into the form.
+Create an XML file with the following code and save the file as mark.xml
+
+<?xml version=”1.0”?>
+
+<students>
+<student>
+
+<subject> JAVA </subject>
+<mark> 98 </mark> <year>
+2012 </year>
+
+</student>
+
+<student>
+
+<subject> ASP .NET </subject>
+<mark> 100 </mark> <year>
+2013 </year>
+
+</student>
+
+<student>
+
+<subject> C++ </subject>
+<mark> 97 </mark>
+<year> 2012 </year>
+
+</student>
+
+</students>
+
+4. Create a windows application using C# .net and design a form with a Datagridview and a button.
+
+Include the namespace at the beginning of the program.
+
+using System.Data.SqlClient;
+
+5.Type the following code under public class Form1
+DataSet ds=new DataSet();
+
+Type the following code in the click event of Button1 private void button1_Click(object sender, EventArgs e)
+{
+
+ds.ReadXml("d:/student.xml");
+dataGridView1.DataMember = "student";
+dataGridView1.DataSource = ds;
+
+}
+
+6.Run the application.
