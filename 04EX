@@ -1,3 +1,52 @@
+                AIM:- 
+                        To develop a menu based C# .net application to implement a text editor with cut, copy, paste, save and close operation.
+
+                PROCEDURE:-
+                            1.	Open Microsoft Visual studio and create a new windows application
+
+                            2.	Add a menu strip from the toolbar and type the names of the menu as follows:
+
+                            File -> New , Save As, Close
+                            Edit -> Cut, Copy, Paste
+                            Exit -> End
+
+                            3.	Include a Label, Textbox and a button in the form.
+
+                            Edit the following code in the Load event of the Form1 label1.Visible = false;
+
+                            textBox1.Visible = false;
+
+                            button1.Visible = false;
+
+                            4.	Edit the following code in the click event of the New option in the file menu richTextBox1.Clear();
+
+                            5.	Edit the following code in the click event of the SaveAs option in the file menu label1.Visible = true;
+
+                            textBox1.Visible = true;
+
+                            button1.Visible = true;
+
+                            6.	Edit the following code in the click event of the Button 1. richTextBox1.SaveFile(textBox1.Text);
+
+                            label1.Visible = false;
+
+                            textBox1.Visible = false;
+
+                            button1.Visible = false;
+
+                            7.	Edit the following code in the click event of the Close option in the file menu. richTextBox1.Clear();
+
+                            8.	Edit the following code in the click event of the Cut option in the edit menu. richTextBox1.Cut();
+
+                            9.	Edit the following code in the click event of the Copy option in the edit menu. richTextBox1.Copy();
+
+                            10.	Edit the following code in the click event of the Paste option in the edit menu. richTextBox1.Paste();
+
+                            11.	Edit the following code in the click event of the end option in the exit menu.
+                            Close();
+
+                            12.	Run the application.
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
