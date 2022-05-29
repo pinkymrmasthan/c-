@@ -1,3 +1,17 @@
+                                                    EX 03 CONVERTING CASE OF THE CHARACTERS
+                                                    
+                   AIM:- 
+                            To write a C# .NET program to accept a string and convert the case of the
+
+                   PROCEDURE:
+                   
+                            1.	Open the C# windows application project and add a form to it.
+
+                            2.	Add a Label , 2 Text Boxes and 2 buttons to the form.
+                            3.	Double click on Button1 and type the code in click() event.
+                            4.	Double click on Button2 and type the code in click() event.
+                            5.	After adding the coding run the program by pressing ‘F5’ .
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +22,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication24
+namespace WindowsFormsApplication5
 {
     public partial class Form1 : Form
     {
@@ -17,31 +31,24 @@ namespace WindowsFormsApplication24
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             String s;
-            string outputString = string.Empty;
-
+            String outputString = string.Empty;
             s = textBox1.Text;
             foreach (char c in s)
             {
-                if (Char.IsLower(c))
+                if (char.IsLower(c))
                 {
                     outputString += char.ToUpper(c);
                     textBox2.Text = outputString;
                 }
-
                 else
                 {
                     outputString += char.ToLower(c);
                     textBox2.Text = outputString;
                 }
-
             }
-
         }
 
         private void button2_Click(object sender, EventArgs e)
