@@ -1,3 +1,25 @@
+                                        EX 01 CONSOLE INPUT
+
+
+
+                AIM:- 
+                To accept a character from console and check the case of the character.
+
+                PROCEDURE:-
+
+                            1. Open Visual Studio by clicking
+                            Start🡪All Programs🡪Microsoft Visual Studio.
+
+                            2. To create a Console application
+                            Select Projects🡪New project and click on Console application icon.
+
+                            3.	In the name text box type the name of the Console application and click OK.
+                            4.	The screen changes to coding window.
+                            5.	Type the code inside Static void Main(string[] args)
+
+                            6.	Press F5 to execute the application.
+
+
 class Program
     {
         static void Main(string[] args)
