@@ -1,0 +1,52 @@
+AIM: Develop a Window application to read an XML document containing employee name,code,Basic pay, HRA, DA into a Dataset
+
+PROCEDURE:
+Create a windows application using C#.Net
+
+Drag the Datagrid view control and a button into the form.
+Create an XML file with the following code and save the file as employee.xml
+
+<?xml version="1.0"?>
+<employees>
+
+<employee>
+<code> E101 </code>
+
+<name> ASHOK </name>
+<basicpay> 12000 </basicpay>
+<hra> 1500 </hra>
+
+<da> 8000 </da>
+</employee>
+
+<employee>
+<code> E102 </code>
+
+<name> BALA </name>
+<basicpay> 15000 </basicpay>
+<hra> 2000 </hra>
+
+<da> 9000 </da>
+</employee>
+
+</employees>
+
+4. Create a windows application using C# .net and design a form with a Datagridview and a button.
+
+Include the namespace at the beginning of the program.
+using System.Data.SqlClient;
+
+5.Type the following code under public class Form1
+
+DataSet ds=new DataSet();
+
+Type the following code in the click event of Button1 private void button1_Click(object sender, EventArgs e)
+
+{
+
+ds.ReadXml("d:/employee.xml");
+dataGridView1.DataMember = "employee";
+dataGridView1.DataSource = ds;
+}
+
+6.Run the application.
