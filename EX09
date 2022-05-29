@@ -1,0 +1,53 @@
+CREATING A DATABASE APPLICATION USING ADO .NET
+
+DATE:
+
+
+Aim: To develop a database application to store the details of students using ADO.NET.
+
+Procedure:
+
+Create a table stud in a SQL server database student.(Using SQL Query Analyzer)
+
+Create table stud(regno varchar(10),Sname varchar(10),dept varchar(15));
+
+Open Microsoft Visual studio and create a new windows application.
+
+Add 3 labels, 3 textboxes and a button into the form.
+
+Edit the following line at the top of the coding before any other code. using System.Data.SqlClient;
+
+Edit the following code inside the class form before all the sub functions.
+
+SqlConnection con=new SqlConnection();
+SqlCommand com=new SqlCommand();
+
+Edit the following code in the load event of ex9 Form1. con.ConnectionString = "Data source=cc1sys22;Integrated
+security=true;Database=pubs";
+com.Connection = con;
+
+con.Open();
+
+Edit the following code in the click event of the Button1. private void button1_Click(object sender, EventArgs e)
+{
+if (textBox1.Text =="" || textBox2 .Text =="" || textBox3 .Text =="")
+{
+
+MessageBox.Show("Please fill all the details");
+
+}
+
+else
+{
+
+com.CommandText = "insert into stud values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "')";
+com.ExecuteNonQuery();
+
+MessageBox.Show("1 record is inserted");
+textBox1.Clear()
+textBox2.Clear()
+textBox3.Clear()
+
+}
+
+}
