@@ -1,0 +1,35 @@
+
+
+AIM: To develop a windows application to read employee records from database and generate XML document containing Employee records.
+
+PROCEDURE:
+
+Create an employee table in Microsoft SQL Server
+
+CREATE TABLE EMPL(EMPCODE VARCHAR(10),ENAME VARCHAR(20),DEPT VARCHAR(20))
+
+Create a windows application and drag a label and a button into the form.
+Include the namespaces at the beginning of the program.
+
+using System.Data.SqlClient ;
+
+using System.Xml;
+
+Double click on the button and type the following code:
+
+private void button1_Click(object sender, EventArgs e)
+{
+
+SqlConnection con = new SqlConnection("Data Source=cc1sys22; Integrated security=true;Database=pubs");
+
+string str = "select * from employee";
+SqlDataAdapter da = new SqlDataAdapter(str,con); DataSet ds = new DataSet(); 
+da.Fill
+(ds,"employee");
+ds.WriteXml("d:/employee.xml");
+
+MessageBox.Show("xml file created");
+}
+
+Form design:
+Output:
